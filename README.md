@@ -35,6 +35,10 @@ Le projet donne contient simplement 2 fichiers tsx (ceux par defaut).
 
 Ajout de alt pour les images de films. Il n'y en avait pas de base.
 
+### 8. Button au film
+
+Pas de bouton explicite pour acceder au films
+
 ## Justifications
 
 - 1 - Chaque carte est maintenant un bouton et n'est plus une simple div, cela permet de pouvoir selectionner la carte entiere sans clavier (et c'est plus joli).
@@ -45,3 +49,5 @@ Ajout de alt pour les images de films. Il n'y en avait pas de base.
 
 - 6 - Au vu de la complexite grandissante du projet, il est important de suivre une architecture plus adaptee.
   Le projet suit maintenant une architecture plus claire et plus comprehensible.
+
+- 8 - Si l'utilisateur ne trouve pas comment acceder au film, il a maintenant un bouton explicite.

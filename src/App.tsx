@@ -97,6 +97,13 @@ export default function App() {
                 >
                   {favorites.includes(film.id) ? "★" : "☆"}
                 </button>
+                <button
+                  className="film-content-button"
+                  key={film.id}
+                  onClick={() => setSelected(film.title)}
+                >
+                  acceder au film
+                </button>
               </div>
             </button>
           ))}

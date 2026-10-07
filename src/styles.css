@@ -22,4 +22,4 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .unavailable { background: #d44343; }
 .favorite { position: absolute; top: .65rem; right: .75rem; border: 0; background: transparent; color: #9b7200; font-size: 1.55rem; cursor: pointer; }
 .selection { margin-top: 2rem; padding: 1rem; background: #e1e7ff; border-radius: .5rem; }
-
+.film-content-button {background: #202536; color: #f4f2ee; margin-top: 0.8em; padding: 0.5rem; border: 0px;}
