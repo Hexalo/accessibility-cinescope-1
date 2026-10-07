@@ -79,8 +79,8 @@ export default function App() {
               onClick={() => setSelected(film.title)}
             >
               <img src={film.poster} />
+              <FilmBadge film={film} />
               <div className="film-content">
-                <FilmBadge film={film} />
                 <h4>{film.title}</h4>
                 <p>
                   {film.genre} · {film.time}
