@@ -2,11 +2,33 @@ import { useMemo, useState } from "react";
 import posterAube from "./assets/aube.svg";
 import posterMemoire from "./assets/memoire.svg";
 import posterOrbite from "./assets/orbite.svg";
+import FilmBadge from "./components/FilmBadge";
 
 const films = [
-  { id: 1, title: "Après l’aube", genre: "Drame", time: "18 h 10", available: true, poster: posterAube },
-  { id: 2, title: "La mémoire des murs", genre: "Documentaire", time: "19 h 30", available: false, poster: posterMemoire },
-  { id: 3, title: "Orbite 9", genre: "Science-fiction", time: "21 h 00", available: true, poster: posterOrbite },
+  {
+    id: 1,
+    title: "Après l’aube",
+    genre: "Drame",
+    time: "18 h 10",
+    available: true,
+    poster: posterAube,
+  },
+  {
+    id: 2,
+    title: "La mémoire des murs",
+    genre: "Documentaire",
+    time: "19 h 30",
+    available: false,
+    poster: posterMemoire,
+  },
+  {
+    id: 3,
+    title: "Orbite 9",
+    genre: "Science-fiction",
+    time: "21 h 00",
+    available: true,
+    poster: posterOrbite,
+  },
 ];
 
 export default function App() {
@@ -14,18 +36,25 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<number[]>([]);
   const filteredFilms = useMemo(
-    () => films.filter((film) => film.title.toLowerCase().includes(query.toLowerCase())),
+    () =>
+      films.filter((film) =>
+        film.title.toLowerCase().includes(query.toLowerCase()),
+      ),
     [query],
   );
 
   const toggleFavorite = (id: number) => {
-    setFavorites((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]);
+    setFavorites((items) =>
+      items.includes(id) ? items.filter((item) => item !== id) : [...items, id],
+    );
   };
 
   return (
     <>
       <div className="topbar" aria-required>
-        <div className="brand" onClick={() => setQuery("")}>CinéScope</div>
+        <div className="brand" onClick={() => setQuery("")}>
+          CinéScope
+        </div>
         <div className="menu">
           <a href="#programme">Programme</a>
           <a href="#infos">Informations</a>
@@ -44,12 +73,18 @@ export default function App() {
 
         <div id="programme" className="film-grid">
           {filteredFilms.map((film) => (
-            <button className="film-card" key={film.id} onClick={() => setSelected(film.title)}>
+            <button
+              className="film-card"
+              key={film.id}
+              onClick={() => setSelected(film.title)}
+            >
               <img src={film.poster} />
               <div className="film-content">
-                <div className={film.available ? "availability available" : "availability unavailable"} />
+                <FilmBadge film={film} />
                 <h4>{film.title}</h4>
-                <p>{film.genre} · {film.time}</p>
+                <p>
+                  {film.genre} · {film.time}
+                </p>
                 <button
                   className="favorite"
                   onClick={(event) => {
@@ -69,4 +104,3 @@ export default function App() {
     </>
   );
 }
-
