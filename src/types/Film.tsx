@@ -5,4 +5,5 @@ export interface Film {
   time: string;
   available: boolean;
   poster: string;
+  alt: string;
 }

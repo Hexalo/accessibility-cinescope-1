@@ -8,7 +8,7 @@ export default function FilmBadge({ film }: { film: Film }) {
           film.available ? "availability available" : "availability unavailable"
         }
       ></div>
-      <p>{film.available ? "available" : "unavailable"}</p>
+      <p>{film.available ? "disponible" : "indisponible"}</p>
     </div>
   );
 }

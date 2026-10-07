@@ -12,6 +12,7 @@ const films = [
     time: "18 h 10",
     available: true,
     poster: posterAube,
+    alt: "Aube",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const films = [
     time: "19 h 30",
     available: false,
     poster: posterMemoire,
+    alt: "Memoire",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const films = [
     time: "21 h 00",
     available: true,
     poster: posterOrbite,
+    alt: "Orbite",
   },
 ];
 
@@ -78,7 +81,7 @@ export default function App() {
               key={film.id}
               onClick={() => setSelected(film.title)}
             >
-              <img src={film.poster} />
+              <img src={film.poster} alt={film.alt} />
               <FilmBadge film={film} />
               <div className="film-content">
                 <h4>{film.title}</h4>
