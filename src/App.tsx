@@ -24,8 +24,8 @@ export default function App() {
 
   return (
     <>
-      <div className="topbar" aria-required>
-        <div className="brand" onClick={() => setQuery("")}>CinéScope</div>
+      <div className="topbar">
+        <a href="#" className="brand" onClick={() => setQuery("")}>CinéScope</a>
         <div className="menu">
           <a href="#programme">Programme</a>
           <a href="#infos">Informations</a>
@@ -33,7 +33,7 @@ export default function App() {
       </div>
 
       <div className="page">
-        <h1>Films à l’affiche</h1>
+        <h1>Films à l'affiche</h1>
         <p className="intro">Découvrez la programmation de cette semaine.</p>
         <input
           className="search"
